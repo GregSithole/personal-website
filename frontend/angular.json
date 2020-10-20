@@ -92,6 +92,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/milligram-scss/dist/milligram.scss",
               "src/styles.scss"
             ],
             "scripts": []

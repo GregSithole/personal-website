@@ -2,9 +2,10 @@
   "name": "frontend",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "ng": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng",
+    "start": "node express.js",
+    "start:dev": "node --max_old_space_size=10000 node_modules/@angular/cli/bin/ng serve --poll=5000 --source-map=false --host \"0.0.0.0\" --disable-host-check",
+    "build": "node --max_old_space_size=10000 node_modules/@angular/cli/bin/ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

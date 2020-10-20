@@ -1,0 +1,35 @@
+version: "3.6"
+services:
+  backend:
+    build:
+      context: $PWD/../../backend
+      dockerfile: $PWD/backend/Dockerfile
+    volumes:
+      - ./backend/.env:/app/.env
+    ports:
+      - 3000
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build:
+      context: $PWD/../..
+      dockerfile: $PWD/frontend/Dockerfile
+    ports:
+      - 4200
+    volumes:
+      - ../../frontend/src:/app/frontend/src
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 3000:80
+    depends_on:
+      - backend
+      - frontend
+    links:
+      - backend
+      - frontend
+

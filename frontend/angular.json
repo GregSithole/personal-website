@@ -92,7 +92,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/milligram-scss/dist/milligram.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "frontend"
+    }
+  },
+  "defaultProject": "frontend",
+  "cli": {
+    "analytics": "1c6e1991-976a-4644-94f8-6db030123bbc"
+  }
 }

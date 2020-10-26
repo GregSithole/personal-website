@@ -1,0 +1,44 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mh-logo {
+  margin: 0 0 -10px;
+}
+
+.main-header {
+  box-shadow: 0 1px 6px rgba(0,0,0,.1);
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 960px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+}
+
+.main-nav {
+  ul {
+    margin: 1em 0 .5em;
+    text-align: center;
+
+    li {
+      display: inline;
+
+      a {
+        display: inline-block;
+        padding: .5em 1.5em;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .main-header .container {
+    justify-content: space-between;
+  }
+}

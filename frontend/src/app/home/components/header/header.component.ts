@@ -7,9 +7,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  toggled: boolean;
+
+  constructor() {
+    this.toggled = false;
+  }
 
   ngOnInit(): void {
+    this.addDarkModeSelector();
+    this.watchDarkMode();
+  }
+
+  scrollToSection(section: string): void {
+    const element = document.querySelector(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  checkDarkMode(): boolean {
+    return !document.documentElement.classList.contains('dark-mode');
+  }
+
+  watchDarkMode(): void {
+    if (!window.matchMedia) {
+      return;
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(this.addDarkModeSelector);
+  }
+
+  addDarkModeSelector(): void {
+    if (this.checkDarkMode()) {
+      document.documentElement.classList.add('dark-mode');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+    }
   }
 
 }

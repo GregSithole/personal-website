@@ -1,36 +1,30 @@
-<nav class="header-animation flex items-center justify-between flex-wrap bg-white dark:bg-gray-800 p-6 fixed w-full">
-  <div class="flex items-center flex-shrink-0 text-black-200 dark:text-white mr-6">
-    <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-    <a (click)="scrollToSection('#introduction')" class="font-semibold text-xl tracking-tight">Greg Sithole</a>
-  </div>
-  <div class="block lg:hidden">
-    <button (click)="toggled = !toggled" class="flex items-center px-3 py-2 border rounded text-black-200 dark:text-teal-200 border-teal-400 hover:text-white hover:border-white">
-      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </button>
-  </div>
-  <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto" [ngClass]="{'block': toggled, 'hidden': !toggled}">
-    <div class="text-sm lg:flex-grow">
-      <a (click)="scrollToSection('#about')" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 dark:text-teal-200 hover:text-white mr-4">
-        About Me
-      </a>
-      <a (click)="scrollToSection('#skills')" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 dark:text-teal-200 hover:text-white mr-4">
-        Skills
-      </a>
-      <a (click)="scrollToSection('#experience')" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 dark:text-teal-200 hover:text-white mr-4">
-        Experience
-      </a>
-      <a (click)="scrollToSection('#projects')" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 dark:text-teal-200 hover:text-white mr-4">
-        Projects
-      </a>
-      <a (click)="scrollToSection('#blog')" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 dark:text-teal-200 hover:text-white mr-4">
-        Blog
-      </a>
-      <a (click)="scrollToSection('#contact')" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 dark:text-teal-200 hover:text-white mr-4">
-        Contact Me
-      </a>
-      <a (click)="addDarkModeSelector()" class="block mt-4 lg:inline-block lg:mt-0 text-black-200 dark:text-teal-200 hover:text-white mr-4">
-        Dark Mode
-      </a>
+<header class="text-gray-700 dark:text-white bg-white dark:bg-iron-500 body-font fixed w-full shadow-lg">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row md:items-center">
+    <nav class="flex flex-col md:flex md:flex-row lg:w-2/5 flex-wrap lg:items-center text-base md:ml-auto ml-3" [ngClass]="{'block': toggled, 'hidden': !toggled}">
+      <a (click)="scrollToSection('#about')" class="mr-5 hover:text-gray-900 dark-hover:text-orange-500">About Me</a>
+      <a (click)="scrollToSection('#skills')" class="mr-5 hover:text-gray-900 dark-hover:text-orange-500">Skills</a>
+      <a (click)="scrollToSection('#experience')" class="mr-5 hover:text-gray-900 dark-hover:text-orange-500">Experience</a>
+      <a (click)="scrollToSection('#projects')" class="mr-5 hover:text-gray-900 dark-hover:text-orange-500">Projects</a>
+      <a (click)="scrollToSection('#blog')" class="mr-5 hover:text-gray-900 dark-hover:text-orange-500">Blog</a>
+      <a (click)="scrollToSection('#contact')" class="mr-5 hover:text-gray-900 dark-hover:text-white">Contact</a>
+    </nav>
+    <a (click)="scrollToSection('#introduction')" class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray dark:text-white justify-between lg:items-center lg:justify-center mb-4 md:mb-0">
+      <span class="ml-3 text-xl">Greg Sithole</span>
+      <div class="block md:hidden">
+        <button (click)="toggled = !toggled" class="flex items-center px-3 py-2 border rounded">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+      </div>
+    </a>
+    <div class="lg:w-2/5 lg:justify-end ml-5 lg:ml-0 hidden md:inline-flex">
+      <div class="flex justify-center items-center">
+        <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear" [ngClass]="{'bg-gray-800': toggleButton, 'bg-gray-400': !toggleButton}">
+          <label for="toggle" class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
+                 [ngClass]="{'translate-x-full border-gray-800': toggleButton, 'translate-x-0 border-gray-400': !toggleButton}">
+          </label>
+          <input (click)="addDarkModeSelector(); toggleButton = !toggleButton" type="checkbox" id="toggle" name="toggle" class="appearance-none w-full h-full active:outline-none focus:outline-none"/>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
+</header>

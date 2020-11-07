@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   toggled: boolean;
+  toggleButton: boolean;
 
   constructor() {
     this.toggled = false;
+    this.toggleButton = false;
   }
 
   ngOnInit(): void {

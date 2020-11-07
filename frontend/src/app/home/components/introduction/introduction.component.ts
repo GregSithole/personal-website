@@ -12,4 +12,11 @@ export class IntroductionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  scrollToSection(section: string): void {
+    const element = document.querySelector(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
 }

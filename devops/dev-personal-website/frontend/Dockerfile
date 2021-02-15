@@ -1,4 +1,4 @@
-FROM node:12.19
+FROM node:lts
 
 WORKDIR /app/backend
 COPY backend/package.json package.json

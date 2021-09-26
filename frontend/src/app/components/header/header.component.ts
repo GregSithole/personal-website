@@ -12,4 +12,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  downloadResume(): void {
+    window.open('/assets/resume/resume.pdf', '_blank');
+  }
+
+  scrollToSection(id: string): void {
+    const element: HTMLElement | null = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'});
+    }
+  }
 }

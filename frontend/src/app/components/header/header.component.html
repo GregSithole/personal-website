@@ -17,11 +17,11 @@
       </button>
     </div>
     <nav [ngClass]="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row md:items-center">
-      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('about')">About Me</a>
-      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('experience')">Experience</a>
-      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('projects')">Projects</a>
-      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('blog')">Blog</a>
-      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('contact')">Contact</a>
+      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('about'); open = !open">About Me</a>
+      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('experience'); open = !open">Experience</a>
+      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('projects'); open = !open">Projects</a>
+      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('blog'); open = !open">Blog</a>
+      <a class="mr-5 hover:text-white cursor-pointer px-4 md:px-0 py-2 md:py-0 mt-2 md:mt-0" (click)="scrollToSection('contact'); open = !open">Contact</a>
       <button class="inline-flex items-center bg-mine-shaft-300 border-0 py-1 px-3 focus:outline-none hover:bg-mine-shaft-200 hover:text-white rounded text-base mt-4 md:mt-0" (click)="downloadResume()">Resume
       </button>
     </nav>
@@ -37,12 +37,10 @@
       <h1 class="title-font md:text-5xl text-3xl mb-4 font-medium text-white">Hi there 👋, I'm Greg Sithole</h1>
       <p class="mb-8 leading-relaxed">I am an Intermediate Full-Stack Developer based in South Africa 🇿🇦</p>
       <div class="flex justify-center">
-        <button
-          class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+        <button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg" (click)="scrollToSection('about');">
           About Greg
         </button>
-        <button
-          class="ml-4 inline-flex text-gray-400 bg-mine-shaft-300 border-0 py-2 px-6 focus:outline-none hover:bg-mine-shaft-200 hover:text-white rounded text-lg">
+        <button class="ml-4 inline-flex text-gray-400 bg-mine-shaft-300 border-0 py-2 px-6 focus:outline-none hover:bg-mine-shaft-200 hover:text-white rounded text-lg" (click)="scrollToSection('contact');">
           Contact
         </button>
       </div>
